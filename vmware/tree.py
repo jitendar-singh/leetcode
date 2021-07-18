@@ -10,7 +10,6 @@ class Node:
         self.right = None
         self.val = key
  
- 
 # A function to do inorder tree traversal
 def printInorder(root):
  
@@ -20,7 +19,7 @@ def printInorder(root):
         printInorder(root.left)
  
         # then print the data of node
-        print(root.val),
+        print(root.val)
  
         # now recur on right child
         printInorder(root.right)
@@ -38,7 +37,7 @@ def printPostorder(root):
         printPostorder(root.right)
  
         # now print the data of node
-        print(root.val),
+        print(root.val)
  
  
 # A function to do preorder tree traversal
@@ -47,7 +46,7 @@ def printPreorder(root):
     if root:
  
         # First print the data of node
-        print(root.val),
+        print(root.val)
  
         # Then recur on left child
         printPreorder(root.left)
@@ -63,7 +62,8 @@ root.right = Node(3)
 root.left.left = Node(4)
 root.left.right = Node(5)
 print("Preorder traversal of binary tree is")
- 
+printPreorder(root)
+
 print("\nInorder traversal of binary tree is")
 printInorder(root)
  

@@ -40,7 +40,7 @@ destination = "G"
 path = []
 while destination is not None:
     path.append(destination)
-    destination = parent[destination]
+    destination = parent[destination] # here we are back tracking to the root
 path.reverse()
 print(path)
 
