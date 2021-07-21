@@ -38,5 +38,5 @@ def isAnagram(s1: str, s2: str)-> bool:
     return True
 
 
-result = isAnagram("clint eastwood","old west action")
+result = anagram("clint eastwood","old west action")
 print(result)
