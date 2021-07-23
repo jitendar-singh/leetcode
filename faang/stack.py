@@ -13,6 +13,14 @@ class Stack:
             item = self.items.pop()
             return item
     
+    def peek(self) -> str:
+        if len(self.items) == 0:
+            print('Empty stack')
+            return None
+        else:
+            item = self.items[-1]
+            return item
+    
     def printStack(self):
         if len(self.items) == 0:
             print('Empty stack')
@@ -29,3 +37,4 @@ s.printStack()
 item = s.pop()
 print("Item poped is:",item)
 s.printStack()
+print("Lets peek:",s.peek())
