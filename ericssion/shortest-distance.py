@@ -10,11 +10,11 @@ adj_list = {
     "H": ["G","F"]
 }
 
-visited, parent, level, queue, output = {}, {}, {}, Queue(), []
+parent, level, visited, queue, output = {}, {}, {}, Queue(), []
 
 for node in adj_list.keys():
-    parent[node] = None
     visited[node] = False
+    parent[node] = None
     level[node] = -1
 
 source = "A"
@@ -30,7 +30,21 @@ while not queue.empty():
         if not visited[v]:
             visited[v] = True
             parent[v] = u
-            level[v] = level[u] + 1
+            level[v] = level[u]+1
             queue.put(v)
 print(output)
+'''
+Distance from source
+'''
+destination = "G"
+path = []
+while destination is not None:
+    path.append(destination)
+    destination = parent[destination]
+path.reverse()
+print(path)
 
+'''
+Level of each node
+'''
+print(level)
