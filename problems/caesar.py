@@ -6,21 +6,27 @@ class Caesar:
         encrypted_msg = []
         location = 0
         output = ""
+
         for char in chars:
             alphabets[char] = counter
             counter+=1
         #a 
         for ch in msg:
-            location = alphabets[ch]
-            desried_char = location+k
-            if desried_char > 26:
-                desried_char = desried_char - 26
-            for key, value in alphabets.items():
-                if value == desried_char:
-                    encrypted_msg.append(key)
+            if ch == " ":
+                encrypted_msg.append("-")
+            else:
+                location = alphabets[ch]
+                desried_char = location+k
+                if desried_char > 26:
+                    desried_char = desried_char - 26
+                for key, value in alphabets.items():
+                    if value == desried_char:
+                        encrypted_msg.append(key)
         return output.join(encrypted_msg)
             
 
 c = Caesar()
-msg = c.encrypt("abcdxyz",4)
-print(msg)
+msg = input('Enter your message: ')
+
+encrypted_output = c.encrypt(msg.lower(),4)
+print(encrypted_output.replace("-"," "))
