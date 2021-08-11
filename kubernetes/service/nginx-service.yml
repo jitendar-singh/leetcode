@@ -7,6 +7,5 @@ spec:
   selector:
     app: nginx-prod-pod
   ports:
-  - port: 80
-    targetPort: 80
+  - port: 81
     nodePort: 30009
