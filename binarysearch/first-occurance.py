@@ -19,6 +19,7 @@ def find(A: list[int],key: int) -> int:
             if(A[mid-1]!= key):
                 return mid
             high = mid - 1
+    return None
 
 A = [-14, -10, 2, 108, 108, 108, 243, 285, 285, 285,401]
 key = 285
