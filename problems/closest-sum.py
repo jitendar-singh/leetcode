@@ -8,7 +8,7 @@ def find_closest_sum(A, target):
         return None
     if len(A) == 1:
         return A[0]
-
+# A = [2,5,6,7,8,8,9] mdr = 4 mdl = 2
     while(low <= high):
         mid = (low + high) // 2
 
