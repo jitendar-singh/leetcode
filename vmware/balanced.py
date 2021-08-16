@@ -21,8 +21,3 @@ def check(mystr: str)-> str:
 
 res = check("{[]{()}}")
 print(res)
-
-
-
-
-        
