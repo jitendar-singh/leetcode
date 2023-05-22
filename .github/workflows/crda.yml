@@ -54,13 +54,13 @@ on:
   workflow_call:
     secrets:
       CRDA_KEY:
-        required: false
+        required: true
       SNYK_TOKEN:
         required: false
   workflow_dispatch:
 
-  # push:
-  #   branches: [ "main" ]
+  push:
+    branches: [ "main" ]
 
   # pull_request_target is used to securely share secret to the PR's workflow run.
   # For more info visit: https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#pull_request_target
@@ -81,8 +81,11 @@ jobs:
     steps:
 
       - name: Check out repository
-        uses: actions/checkout@v2
-
+        uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.11'
       # *******************************************************************
       # Required: Instructions to setup project
       # 1. Setup Go, Java, Node.js or Python depending on your project type
@@ -122,5 +125,5 @@ jobs:
         uses: redhat-actions/crda@v1
         with:
           crda_key: ${{ secrets.CRDA_KEY }}           # Either use crda_key or snyk_token
-          # snyk_token: ${{ secrets.SNYK_TOKEN }}
+          # snyk_token:
           # upload_artifact: false                    # Set this to false to skip artifact upload
