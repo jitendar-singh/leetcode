@@ -125,5 +125,33 @@ jobs:
         uses: redhat-actions/crda@v1
         with:
           crda_key: ${{ secrets.CRDA_KEY }}           # Either use crda_key or snyk_token
+          fail_on: false
           # snyk_token:
           # upload_artifact: false                    # Set this to false to skip artifact upload
+      - name: Print JSON analysis report
+        if: ${{ always() && steps.scan.outputs.crda_report_json }}
+        run: cat ${{ steps.scan.outputs.crda_report_json }}
+
+      - name: Print SARIF analysis report
+        if: ${{ always() && steps.scan.outputs.crda_report_sarif }}
+        run: cat ${{ steps.scan.outputs.crda_report_sarif }}
+
+      - name: Print Report Link
+        run: echo ${{ steps.scan.outputs.report_link }}
+
+      - name: Print Artifact Name
+        run: echo ${{ steps.scan.outputs.artifact_name }}
+  
+      - name: Print JSON analysis report
+        if: ${{ always() && steps.scan.outputs.crda_report_json }}
+        run: cat ${{ steps.scan.outputs.crda_report_json }}
+
+      - name: Print SARIF analysis report
+        if: ${{ always() && steps.scan.outputs.crda_report_sarif }}
+        run: cat ${{ steps.scan.outputs.crda_report_sarif }}
+
+      - name: Print Report Link
+        run: echo ${{ steps.scan.outputs.report_link }}
+
+      - name: Print Artifact Name
+        run: echo ${{ steps.scan.outputs.artifact_name }}
