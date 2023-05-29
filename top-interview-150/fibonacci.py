@@ -10,9 +10,6 @@ def fibonacci(n):
 
     return fib_seq
 
-
-
-
 num_terms = 10
 fibonacci_sequence = fibonacci(num_terms)
 print(fibonacci_sequence)
