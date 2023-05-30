@@ -11,5 +11,5 @@ def find_pythagorean_quadraple(number):
 
 result = find_pythagorean_quadraple(10)
 for quadraple in result:
-    print(str(quadraple).replace('(', '').replace(')',''))
+    print(str(quadraple).replace('(', '').replace(')','').replace(',',''))
     # print(quadraple)
