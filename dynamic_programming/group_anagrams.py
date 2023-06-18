@@ -17,7 +17,3 @@ def is_anagram(previous, next_item):
 
 arr = ["eat", "tea", "tan", "ate", "bat", "nat"]
 print(group_anagram(arr))
-
-
-            
-
